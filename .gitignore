@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Modelos descargados (se obtienen con build/fetch_models.py)
+app/models/
+
+# Artefactos de empaquetado
+build/work/
+dist/
+*.spec.bak
+
+# Temporales de runtime
+videos/
+.facehunt2_tmp/
+*.log
+
+# IDE / SO
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
