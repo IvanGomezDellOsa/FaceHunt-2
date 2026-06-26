@@ -69,8 +69,6 @@ miniatura, mini-clip animado y un salto directo a ese momento.
   </a>
 </p>
 
-No requiere instalar Python ni nada más.
-
 ---
 
 <details>

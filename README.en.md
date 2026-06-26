@@ -69,8 +69,6 @@ to that moment.
   </a>
 </p>
 
-No need to install Python or anything else.
-
 ---
 
 <details>
