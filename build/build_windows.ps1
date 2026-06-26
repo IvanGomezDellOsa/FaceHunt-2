@@ -30,12 +30,11 @@ Write-Host "Listo. Ejecutable en: dist\FaceHunt2\FaceHunt2.exe" -ForegroundColor
 # habitual, genera además dist\FaceHunt2-Setup.exe.
 $iscc = (Get-Command iscc.exe -ErrorAction SilentlyContinue).Source
 if (-not $iscc) {
-    foreach ($p in @(
-        "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
-        "${env:ProgramFiles}\Inno Setup 6\ISCC.exe"
-    )) {
-        if (Test-Path $p) { $iscc = $p; break }
-    }
+    # Busca cualquier versión instalada (Inno Setup 6, 7, ...) en ambos Program Files.
+    $iscc = Get-ChildItem -Path @(${env:ProgramFiles}, ${env:ProgramFiles(x86)}) `
+        -Filter "ISCC.exe" -Recurse -ErrorAction SilentlyContinue |
+        Where-Object { $_.DirectoryName -like "*Inno Setup*" } |
+        Select-Object -First 1 -ExpandProperty FullName
 }
 
 if ($iscc) {
