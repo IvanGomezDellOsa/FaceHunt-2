@@ -42,7 +42,6 @@ const I18N = {
     "err.cancelled": "Búsqueda cancelada.",
     "alert.image": "Validá primero la imagen de referencia (Paso 1).",
     "alert.video": "Validá primero el video (Paso 2).",
-    "toast.repo": "Repositorio: próximamente.",
     "contact.eyebrow": "Contacto",
     "contact.open": "Abrir en tu app de correo",
     "phrases": ["Buscando rostros…", "Comparando caras…", "Revisando cuadro por cuadro…", "Afinando coincidencias…", "Casi listo…"],
@@ -86,7 +85,6 @@ const I18N = {
     "err.cancelled": "Search cancelled.",
     "alert.image": "Validate the reference image first (Step 1).",
     "alert.video": "Validate the video first (Step 2).",
-    "toast.repo": "Repository: coming soon.",
     "contact.eyebrow": "Contact",
     "contact.open": "Open in your mail app",
     "phrases": ["Looking for faces…", "Comparing faces…", "Scanning frame by frame…", "Refining matches…", "Almost there…"],
@@ -165,7 +163,9 @@ $$("#langSwitch button").forEach((b) =>
     applyI18n();
   })
 );
-$("#repoBtn").addEventListener("click", () => toast(t("toast.repo")));
+$("#repoBtn").addEventListener("click", () =>
+  window.open("https://github.com/IvanGomezDellOsa/FaceHunt-2", "_blank", "noopener")
+);
 
 // --- Modal de contacto ---
 const contactModal = $("#contactModal");
