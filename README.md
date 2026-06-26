@@ -11,13 +11,6 @@ miniatura, mini-clip animado y un salto directo a ese momento.
 > Reescritura completa de [FaceHunt](https://github.com/IvanGomezDellOsa/FaceHunt).
 > Sin Tkinter, sin TensorFlow, sin depender de un servidor online.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white">
-  <img src="https://img.shields.io/badge/100%25-Local_y_privado-22c55e">
-  <img src="https://img.shields.io/badge/GPU-CUDA_/_DirectML-76B900">
-</p>
-
 ---
 
 ## Demo
@@ -118,7 +111,7 @@ tests/                 Tests de la lógica pura (pytest)
 
 </details>
 
-<details>
+<details open>
 <summary>FaceHunt v1 → v2</summary>
 
 FaceHunt-2 reescribió el stack completo respecto a la versión anterior:
