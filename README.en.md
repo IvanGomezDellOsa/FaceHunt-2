@@ -1,15 +1,16 @@
 [English](README.en.md) | [Español](README.md)
 
-# FaceHunt-2
+# FaceHunt 2
 
-FaceHunt-2 is a **100% local desktop application** that finds every appearance of a
+FaceHunt 2 is a **100% local desktop application** that finds every appearance of a
 person inside a video from a single reference photo. You upload one or more photos
 and a video (local file or YouTube URL) and get the **exact time ranges** where that
 person appears, each one with a thumbnail, an animated mini-clip and a direct jump
 to that moment.
 
 > A complete rewrite of [FaceHunt](https://github.com/IvanGomezDellOsa/FaceHunt).
-> No Tkinter, no TensorFlow, no dependency on an online server.
+> No Tkinter, no TensorFlow, no dependency on an online server. ~10x faster, higher
+> accuracy, more complete results and new features.
 
 ---
 
@@ -29,7 +30,7 @@ to that moment.
 
 ## Features
 
-- **100% local and private** — Your photos and videos (biometric data) never leave your device. No online server, no cloud upload.
+- **100% local and private** — Your photos and videos never leave your device. No online server, no cloud upload.
 
 - **State-of-the-art facial recognition** — InsightFace `antelopev2` engine (SCRFD-10G + ArcFace ResNet100 @ Glint360K, 512-d embeddings) on ONNXRuntime, with flip-TTA for higher recall.
 
@@ -48,7 +49,7 @@ to that moment.
 ## How to use
 
 1. **Open the app** (`FaceHunt2.exe`).
-2. **Reference:** upload one or more clear, front-facing photos of the person to look for.
+2. **Reference:** upload one or more front-facing photos of the person to look for.
 3. **Video:** choose a local file or paste a YouTube URL.
 4. **Mode:** pick *Fast* or *Thorough* (more frames per second and smaller faces).
 5. **Results:** watch the live progress and, when it finishes, browse the appearance ranges. Click any of them (or the timeline) to jump to that moment.
@@ -112,7 +113,7 @@ tests/                 Pure-logic tests (pytest)
 <details open>
 <summary>FaceHunt v1 → v2</summary>
 
-FaceHunt-2 rewrote the entire stack compared to the previous version:
+FaceHunt 2 rewrote the entire stack compared to the previous version:
 
 - **~10x faster** video analysis (ONNXRuntime with GPU vs TensorFlow-CPU, producer-consumer pipeline).
 - **Higher accuracy**: ArcFace ResNet100 with 512-d embeddings trained on Glint360K + flip-TTA and temporal tracking (vs FaceNet 128-d).

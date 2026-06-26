@@ -11,10 +11,23 @@ $ErrorActionPreference = "Stop"
 # Ubicarse en la raíz del proyecto (carpeta padre de \build)
 Set-Location (Split-Path $PSScriptRoot -Parent)
 
+# ¿Hay una build acelerada de onnxruntime (DirectML/CUDA) ya instalada? Hay que
+# preservarla: requirements.txt fija la de CPU y, como son excluyentes, la pisaría.
+$accel = python -m pip list 2>$null |
+    Select-String -Pattern "^onnxruntime-(directml|gpu)\s" |
+    ForEach-Object { ($_ -split "\s+")[0] } |
+    Select-Object -First 1
+
 Write-Host "==> Instalando dependencias + PyInstaller" -ForegroundColor Cyan
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pip install pyinstaller
+
+if ($accel) {
+    Write-Host "==> Restaurando build acelerada de onnxruntime: $accel" -ForegroundColor Cyan
+    python -m pip uninstall -y onnxruntime onnxruntime-directml onnxruntime-gpu
+    python -m pip install $accel
+}
 
 Write-Host "==> Descargando modelo InsightFace (offline)" -ForegroundColor Cyan
 python build\fetch_models.py

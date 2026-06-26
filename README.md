@@ -1,15 +1,16 @@
 [Español](README.md) | [English](README.en.md)
 
-# FaceHunt-2
+# FaceHunt 2
 
-FaceHunt-2 es una **aplicación de escritorio 100% local** que encuentra todas las
+FaceHunt 2 es una **aplicación de escritorio 100% local** que encuentra todas las
 apariciones de una persona dentro de un video a partir de una foto de referencia.
 Subís una o varias fotos y un video (archivo local o URL de YouTube) y obtenés los
 **rangos de tiempo exactos** en los que aparece esa persona, cada uno con
 miniatura, mini-clip animado y un salto directo a ese momento.
 
 > Reescritura completa de [FaceHunt](https://github.com/IvanGomezDellOsa/FaceHunt).
-> Sin Tkinter, sin TensorFlow, sin depender de un servidor online.
+> Sin Tkinter, sin TensorFlow, sin depender de un servidor online. ~10x más rápido,
+> mayor precisión, resultados más completos y nuevas funcionalidades.
 
 ---
 
@@ -29,7 +30,7 @@ miniatura, mini-clip animado y un salto directo a ese momento.
 
 ## Características
 
-- **100% local y privado** — Tus fotos y videos (datos biométricos) nunca salen de tu equipo. No hay servidor online ni subida a la nube.
+- **100% local y privado** — Tus fotos y videos nunca salen de tu equipo. No hay servidor online ni subida a la nube.
 
 - **Reconocimiento facial de última generación** — Motor InsightFace `antelopev2` (SCRFD-10G + ArcFace ResNet100 @ Glint360K, embeddings de 512-d) sobre ONNXRuntime, con flip-TTA para mayor recall.
 
@@ -48,7 +49,7 @@ miniatura, mini-clip animado y un salto directo a ese momento.
 ## Cómo usar
 
 1. **Abrí la app** (`FaceHunt2.exe`).
-2. **Referencia:** subí una o varias fotos frontales y nítidas de la persona a buscar.
+2. **Referencia:** subí una o varias fotos frontales de la persona a buscar.
 3. **Video:** elegí un archivo local o pegá una URL de YouTube.
 4. **Modo:** elegí *Rápido* o *Exhaustivo* (más cuadros por segundo y caras más pequeñas).
 5. **Resultados:** mirá el progreso en vivo y, al terminar, recorré los rangos de aparición. Clic en cualquiera (o en la línea de tiempo) para saltar a ese momento.
@@ -112,7 +113,7 @@ tests/                 Tests de la lógica pura (pytest)
 <details open>
 <summary>FaceHunt v1 → v2</summary>
 
-FaceHunt-2 reescribió el stack completo respecto a la versión anterior:
+FaceHunt 2 reescribió el stack completo respecto a la versión anterior:
 
 - **~10x más rápido** en el análisis de video (ONNXRuntime con GPU vs TensorFlow-CPU, pipeline productor-consumidor).
 - **Mayor precisión**: ArcFace ResNet100 con embeddings de 512-d entrenado en Glint360K + flip-TTA y tracking temporal (vs FaceNet 128-d).
