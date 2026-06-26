@@ -1,0 +1,38 @@
+# ============================================================================
+# FaceHunt-2 — dependencias
+# ----------------------------------------------------------------------------
+# Motor de reconocimiento facial: InsightFace (SCRFD + ArcFace) sobre
+# ONNXRuntime. NO usa TensorFlow ni DeepFace.
+# ============================================================================
+
+# --- Reconocimiento facial -------------------------------------------------
+insightface>=0.7.3
+numpy>=1.26.4,<2.0          # insightface/onnx aún conviven mejor con numpy 1.x
+
+# --- ONNXRuntime -----------------------------------------------------------
+# El motor auto-detecta el provider disponible (CUDA -> DirectML -> CPU).
+# Por defecto va la build de CPU (portable). Para acelerar por GPU instalá UNA
+# build alternativa (son EXCLUYENTES: desinstalá 'onnxruntime' antes):
+#   pip uninstall -y onnxruntime && pip install onnxruntime-directml  # GPU AMD/Intel/NVIDIA en Windows
+#   pip uninstall -y onnxruntime && pip install onnxruntime-gpu       # NVIDIA + CUDA
+# El código no cambia: InsightFace usa el provider acelerado automáticamente.
+onnxruntime>=1.17.0
+
+# --- Video -----------------------------------------------------------------
+opencv-python-headless>=4.8.1.78   # headless: la UI es web, no necesitamos las ventanas de cv2
+yt-dlp>=2024.10.07
+
+# --- Backend web -----------------------------------------------------------
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.9
+pydantic>=2.7.0
+
+# --- Ventana de escritorio -------------------------------------------------
+# pywebview usa WebView2 en Windows (preinstalado en Win11). Si no estuviera,
+# la app cae automáticamente al navegador por defecto.
+pywebview>=5.1
+
+# --- Utilidades ------------------------------------------------------------
+unidecode>=1.3.8
+Pillow>=10.4.0
