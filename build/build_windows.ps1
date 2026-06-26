@@ -1,8 +1,10 @@
 # ===========================================================================
-# Construye el ejecutable de FaceHunt-2 para Windows (one-dir).
+# Construye FaceHunt-2 para Windows.
 # Uso (desde la raíz del proyecto FaceHunt-2):
 #     .\build\build_windows.ps1
-# Resultado: dist\FaceHunt2\FaceHunt2.exe  (doble clic, sin instalar nada)
+# Resultados:
+#   dist\FaceHunt2\FaceHunt2.exe   (one-dir, doble clic sin instalar nada)
+#   dist\FaceHunt2-Setup.exe       (instalador, si Inno Setup está disponible)
 # ===========================================================================
 $ErrorActionPreference = "Stop"
 
@@ -22,3 +24,28 @@ pyinstaller build\FaceHunt2.spec --noconfirm --distpath dist --workpath build\wo
 
 Write-Host ""
 Write-Host "Listo. Ejecutable en: dist\FaceHunt2\FaceHunt2.exe" -ForegroundColor Green
+
+# --- Instalador opcional (Inno Setup) --------------------------------------
+# Si ISCC.exe (el compilador de Inno Setup) está en el PATH o en su ruta
+# habitual, genera además dist\FaceHunt2-Setup.exe.
+$iscc = (Get-Command iscc.exe -ErrorAction SilentlyContinue).Source
+if (-not $iscc) {
+    foreach ($p in @(
+        "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
+        "${env:ProgramFiles}\Inno Setup 6\ISCC.exe"
+    )) {
+        if (Test-Path $p) { $iscc = $p; break }
+    }
+}
+
+if ($iscc) {
+    Write-Host "==> Construyendo instalador con Inno Setup" -ForegroundColor Cyan
+    & $iscc build\installer.iss
+    Write-Host ""
+    Write-Host "Listo. Instalador en: dist\FaceHunt2-Setup.exe" -ForegroundColor Green
+} else {
+    Write-Host ""
+    Write-Host "Inno Setup no encontrado: omito el instalador." -ForegroundColor Yellow
+    Write-Host "Instalalo desde https://jrsoftware.org/isdl.php y re-ejecutá," -ForegroundColor Yellow
+    Write-Host "o compilá a mano:  iscc build\installer.iss" -ForegroundColor Yellow
+}
