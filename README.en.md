@@ -17,7 +17,7 @@ to that moment.
 ## Demo
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=rJLyYJcEm7c" target="_blank">
+  <a href="https://www.youtube.com/watch?v=huNRQiAW_ss" target="_blank">
     <img
       alt="Watch the demo on YouTube"
       src="https://img.shields.io/badge/▶_WATCH_DEMO_ON_YOUTUBE-FF0000?style=for-the-badge&logo=youtube&logoColor=white"
