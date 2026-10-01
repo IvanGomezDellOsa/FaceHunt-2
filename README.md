@@ -14,13 +14,13 @@ miniatura, mini-clip animado y un salto directo a ese momento.
 
 ---
 
-## Demo
+## Video de presentación
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=huNRQiAW_ss" target="_blank">
     <img
-      alt="Ver demo en YouTube"
-      src="https://img.shields.io/badge/▶_VER_DEMO_EN_YOUTUBE-FF0000?style=for-the-badge&logo=youtube&logoColor=white"
+      alt="Video de presentación en YouTube"
+      src="https://img.shields.io/badge/▶_VIDEO_DE_PRESENTACIÓN-FF0000?style=for-the-badge&logo=youtube&logoColor=white"
       height="60"
     >
   </a>

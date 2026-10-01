@@ -14,13 +14,13 @@ to that moment.
 
 ---
 
-## Demo
+## Presentation video
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=huNRQiAW_ss" target="_blank">
     <img
-      alt="Watch the demo on YouTube"
-      src="https://img.shields.io/badge/▶_WATCH_DEMO_ON_YOUTUBE-FF0000?style=for-the-badge&logo=youtube&logoColor=white"
+      alt="Presentation video on YouTube"
+      src="https://img.shields.io/badge/▶_PRESENTATION_VIDEO-FF0000?style=for-the-badge&logo=youtube&logoColor=white"
       height="60"
     >
   </a>
