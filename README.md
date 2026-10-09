@@ -9,8 +9,8 @@ Subís una o varias fotos y un video (archivo local o URL de YouTube) y obtenés
 miniatura, mini-clip animado y un salto directo a ese momento.
 
 > Reescritura completa de [FaceHunt](https://github.com/IvanGomezDellOsa/FaceHunt).
-> Sin Tkinter, sin TensorFlow, sin depender de un servidor online. ~10x más rápido,
-> mayor precisión, resultados más completos y nuevas funcionalidades.
+> Sin Tkinter, sin TensorFlow, sin depender de un servidor online. ONNX Runtime con
+> GPU, ArcFace en lugar de FaceNet, resultados más completos y nuevas funcionalidades.
 
 ---
 
@@ -115,7 +115,7 @@ tests/                 Tests de la lógica pura (pytest)
 
 FaceHunt 2 reescribió el stack completo respecto a la versión anterior:
 
-- **~10x más rápido** en el análisis de video (ONNXRuntime con GPU vs TensorFlow-CPU, pipeline productor-consumidor).
+- **Nuevo motor de inferencia**: ONNXRuntime con aceleración por GPU según el hardware disponible (CUDA, DirectML o CPU) en lugar de TensorFlow en CPU, con pipeline productor-consumidor.
 - **Mayor precisión**: ArcFace ResNet100 con embeddings de 512-d entrenado en Glint360K + flip-TTA y tracking temporal (vs FaceNet 128-d).
 - **Resultados más completos**: rangos de aparición con miniatura, mini-clip animado y línea de tiempo (vs timestamps sueltos por segundo).
 - **Nuevas funcionalidades**: referencia con múltiples fotos promediadas, cancelación de jobs en tiempo real, progreso por SSE, ejecutable de un clic sin instalación.

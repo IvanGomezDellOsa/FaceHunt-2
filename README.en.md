@@ -9,8 +9,8 @@ person appears, each one with a thumbnail, an animated mini-clip and a direct ju
 to that moment.
 
 > A complete rewrite of [FaceHunt](https://github.com/IvanGomezDellOsa/FaceHunt).
-> No Tkinter, no TensorFlow, no dependency on an online server. ~10x faster, higher
-> accuracy, more complete results and new features.
+> No Tkinter, no TensorFlow, no dependency on an online server. ONNX Runtime on GPU,
+> ArcFace instead of FaceNet, more complete results and new features.
 
 ---
 
@@ -115,7 +115,7 @@ tests/                 Pure-logic tests (pytest)
 
 FaceHunt 2 rewrote the entire stack compared to the previous version:
 
-- **~10x faster** video analysis (ONNXRuntime with GPU vs TensorFlow-CPU, producer-consumer pipeline).
+- **New inference engine**: ONNXRuntime with GPU acceleration based on the available hardware (CUDA, DirectML or CPU) instead of TensorFlow on CPU, with a producer-consumer pipeline.
 - **Higher accuracy**: ArcFace ResNet100 with 512-d embeddings trained on Glint360K + flip-TTA and temporal tracking (vs FaceNet 128-d).
 - **More complete results**: appearance ranges with thumbnail, animated mini-clip and timeline (vs loose per-second timestamps).
 - **New features**: multi-photo reference averaging, real-time job cancellation, live SSE progress, one-click executable with no installation required.
