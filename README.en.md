@@ -134,6 +134,7 @@ The **InsightFace weights** (`antelopev2`, `buffalo_*`) have a **research / non-
 
 **Iván Gómez Dell'Osa**
 
+- Web: https://www.ivangomezdellosa.com.ar
 - GitHub: https://github.com/IvanGomezDellOsa
 - Email: ivangomezdellosa@gmail.com
 - Linkedin: https://www.linkedin.com/in/ivangomezdellosa/

@@ -134,6 +134,7 @@ Los **pesos de InsightFace** (`antelopev2`, `buffalo_*`) tienen licencia de **in
 
 **Iván Gómez Dell'Osa**
 
+- Web: https://www.ivangomezdellosa.com.ar
 - GitHub: https://github.com/IvanGomezDellOsa
 - Email: ivangomezdellosa@gmail.com
 - Linkedin: https://www.linkedin.com/in/ivangomezdellosa/
